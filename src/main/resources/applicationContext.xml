@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id = "payBank"
+    <bean id = "payAlphaBank"
           class="spring_introduction.AlphaBank">
     </bean>
 </beans>
