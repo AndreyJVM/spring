@@ -64,4 +64,5 @@ payAlphaBank.pay();
 // закрываем context
 context.close();
 ```
+![](src/main/resources/photo/SKR1.png)
 
