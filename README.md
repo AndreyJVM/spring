@@ -1,5 +1,5 @@
 # Spring - основной фреймворк для Java # 
-[](src/main/resources/photo/SpringBasic.jpg)
+![](src/main/resources/photo/SpringBasic.jpg)
 Spring предлагает *контейнер*, часто называемым **контекстом приложения
 Spring**, который создаёт компоненты приложения и управляет ими. Эти компоненты, или *bean-компоненты*,
 объединяются внутри контекста Spring.
