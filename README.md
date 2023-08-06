@@ -137,8 +137,36 @@ public class MainTestAddDIConstructorArg {
     }
 }
 ```
-
+Вывод от проделанных действий не меняется
 ![](/src/main/resources/photo/screenshot/SKR4.png)
+
+Рассмотрим способ внедрения зависимостей с помощью сеттеров. Создадим несколько полей для нашего `Person`: `name` типа _String_ и `age` типа _byte_. Плюс геттеры и сеттеры.
+
+В XML file записываем новый тег `<property ... />`
+
+```xhtml
+    <bean id = "person"
+          class="spring_introduction.Person">
+        <!--Зависимости через конструктор-->
+        <constructor-arg ref="payAlphaBank"/>
+
+        <!--Зависимости через сеттеры-->
+        <property name="name" value="Andrey"/>
+        <property name="age" value="21"/>
+    </bean>
+```
+
+- Атрибут `name` - это имя сеттера, с маленькой буквы без приставки `set`: `setName` -> `name`; `setAge` -> `age` и т.д.
+- Атрибут `value` - значение которое мы хотим установить полю.
+
+Давайте теперь отобразим в консоли значения полей через геттеры. В имеющемся классе `MainTestAddDIConstructorArg` добавим вывод
+
+```java
+System.out.println("Name - "+person.getName());
+System.out.println("Age - "+person.getAge());
+```
+![](/src/main/resources/photo/screenshot/SKR5.png)
+
 
 Вот такой не замысловатый способ, но Вам скорее всего покажется, что мы в разы усложнили процесс создания объекта.
 Но это на первый взгляд, на самом деле при увеличении количества объектов и зависимостей между ними, Spring позволит нам 

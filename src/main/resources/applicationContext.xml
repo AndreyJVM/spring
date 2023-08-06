@@ -13,6 +13,11 @@
 
     <bean id = "person"
           class="spring_introduction.Person">
+        <!--Зависимости через конструктор-->
         <constructor-arg ref="payAlphaBank"/>
+
+        <!--Зависимости через сеттеры-->
+        <property name="name" value="Andrey"/>
+        <property name="age" value="21"/>
     </bean>
 </beans>

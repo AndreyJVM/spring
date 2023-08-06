@@ -11,6 +11,8 @@ public class MainTestAddDIConstructorArg {
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
         Person person = context.getBean("person", Person.class);
+        System.out.println("Name - "+person.getName());
+        System.out.println("Age - "+person.getAge());
         person.yourPay();
 
         context.close();
