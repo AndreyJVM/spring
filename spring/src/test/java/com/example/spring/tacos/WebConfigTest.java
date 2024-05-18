@@ -1,5 +1,6 @@
 package com.example.spring.tacos;
 
+import com.example.spring.tacos.web.WebConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,8 +13,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 /** Тесты для домашней страницы
  * */
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(WebConfig.class)
+public class WebConfigTest {
 
     /* Имитируем работу Spring MVC, чтобы не запускать сервер */
     @Autowired
