@@ -1,11 +1,14 @@
 package com.example.spring.tacos.web;
 
 
+import com.example.spring.tacos.TacoOrder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 /** После создания taco перенаправить пользователя на форму заказа, откуда он сможет сделать заказ на
  * доставку своего taco
@@ -17,7 +20,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class OrderController {
 
     @GetMapping("/current")
-    public String orderFrom() {
-        return "orderFrom";
+    public String orderForm() {
+        return "orderForm";
+    }
+
+    @PostMapping
+    public String processOrder(TacoOrder order, SessionStatus sessionStatus) {
+        log.info("Order submitted: {}", order);
+        sessionStatus.setComplete();
+
+        return "redirect:/";
     }
 }
