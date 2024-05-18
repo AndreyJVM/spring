@@ -6,14 +6,22 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Класс предоставляющий заказы, которые клиенты будут оставлять на сайте,
  * информацию о рецепте, оплате и доставке
  */
+
 @Data
 public class TacoOrder {
+
+    private static final long serialVersionID = 1L;
+
+    private Long id;
+
+    private Date placedAt;
 
     @NotBlank(message = "Delivery name is required")
     private String deliveryName;
