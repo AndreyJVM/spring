@@ -61,7 +61,35 @@ public class JdbcOrderRepository implements OrderRepository{
         return tacoOrder;
     }
 
-    private void saveTaco(long orderId, int orderKey, Taco taco) {
+    /**
+     * Сохраняем объекты Taco связанные с заказом. Для каждого Taco в заказе
+     * @return {@code tacoId}
+     */
+    private long saveTaco(long orderId, int orderKey, Taco taco) {
+        taco.setCreateAt(new Date());
+        PreparedStatementCreatorFactory pscf =
+                new PreparedStatementCreatorFactory(
+                        "insert into Taco " +
+                                "(name, created_at, taco_order, taco_order_key) " +
+                                "values (?, ?, ?, ?)",
+                        Types.VARCHAR, Types.TIMESTAMP, Types.LONGVARCHAR, Types.LONGVARCHAR
+                );
+        pscf.setReturnGeneratedKeys(true);
 
+        PreparedStatementCreator psc = pscf.newPreparedStatementCreator(
+                Arrays.asList(
+                        taco.getName(),
+                        taco.getCreateAt(),
+                        orderId,
+                        orderKey));
+
+        GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
+        jdbcOperations.update(psc, keyHolder);
+        long tacoId = keyHolder.getKey().longValue();
+        taco.setId(tacoId);
+
+        saveIngredientRefs(tacoId, taco.getIngredients());
+
+        return tacoId;
     }
 }
