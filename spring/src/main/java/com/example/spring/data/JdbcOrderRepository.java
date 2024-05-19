@@ -1,5 +1,7 @@
 package com.example.spring.data;
 
+import com.example.spring.tacos.Ingredient;
+import com.example.spring.tacos.IngredientRef;
 import com.example.spring.tacos.Taco;
 import com.example.spring.tacos.TacoOrder;
 import org.springframework.jdbc.core.JdbcOperations;
@@ -91,5 +93,15 @@ public class JdbcOrderRepository implements OrderRepository{
         saveIngredientRefs(tacoId, taco.getIngredients());
 
         return tacoId;
+    }
+
+    private void saveIngredientRefs(long tacoId, List<IngredientRef> ingredientsRef) {
+        int key = 0;
+        for(IngredientRef ingredientRef : ingredientsRef){
+            jdbcOperations.update(
+                    "insert into Ingredient_Ref (ingredient, taco, taco_key) " +
+                            "values (?, ?, ?, ?)",
+                    ingredientRef.getIngredient(), tacoId, key++);
+        }
     }
 }
