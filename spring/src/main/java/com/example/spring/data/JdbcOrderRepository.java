@@ -1,5 +1,6 @@
 package com.example.spring.data;
 
+import com.example.spring.tacos.Ingredient;
 import com.example.spring.tacos.IngredientRef;
 import com.example.spring.tacos.Taco;
 import com.example.spring.tacos.TacoOrder;
@@ -95,14 +96,14 @@ public class JdbcOrderRepository implements IOrderRepository {
     }
 
     /** Циклически перебирает список объектов {@code Ingredient} и сохраняет каждый в таблице {@code Ingredient_Ref} */
-    private void saveIngredientRefs(long tacoId, List<IngredientRef> ingredientsRefs) {
+    private void saveIngredientRefs(long tacoId, List<IngredientRef> ingredientRefs) {
         int key = 0;
 
-        for(IngredientRef ingredientsRef : ingredientsRefs){
+        for(IngredientRef ingredientRef : ingredientRefs){
             jdbcOperations.update(
                     "insert into Ingredient_Ref (ingredient, taco, taco_key) " +
                             "values (?, ?, ?)",
-                    ingredientsRef.getIngredient(), tacoId, key++);
+                    ingredientRef.getIngredient(), tacoId, key++);
         }
     }
 }

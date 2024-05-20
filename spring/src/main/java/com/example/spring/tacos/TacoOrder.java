@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.List;
  */
 
 @Data
-public class TacoOrder {
+public class TacoOrder implements Serializable {
 
     private static final long serialVersionID = 1L;
 
