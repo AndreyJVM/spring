@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class JdbcIngredientRepository implements IngredientRepository {
+public class JdbcIngredientRepository implements IIngredientRepository {
 
     private JdbcTemplate jdbcTemplate;
 

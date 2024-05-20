@@ -7,7 +7,7 @@ import java.util.Optional;
  * Getting one ingredient by ID.
  * Saving an object {@code Ingredient}
  * */
-public interface IngredientRepository {
+public interface IIngredientRepository {
 
     Iterable<Ingredient> findAll();
 

@@ -1,6 +1,6 @@
 package com.example.spring.tacos.web;
 
-import com.example.spring.data.IngredientRepository;
+import com.example.spring.data.IIngredientRepository;
 import com.example.spring.tacos.Ingredient;
 import com.example.spring.tacos.Ingredient.Type;
 import com.example.spring.tacos.Taco;
@@ -27,10 +27,10 @@ import java.util.stream.Collectors;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
 
-    private final IngredientRepository ingredientRepository;
+    private final IIngredientRepository ingredientRepository;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepository) {
+    public DesignTacoController(IIngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
 
