@@ -4,7 +4,6 @@ package com.example.spring.tacos.web;
 import com.example.spring.data.IOrderRepository;
 import com.example.spring.tacos.TacoOrder;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
