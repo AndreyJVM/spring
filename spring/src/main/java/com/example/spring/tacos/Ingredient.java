@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.relational.core.mapping.Table;
 
 /** У каждого ингредиента есть название и тип, позволяющие его визуально квалифицировать
  * */

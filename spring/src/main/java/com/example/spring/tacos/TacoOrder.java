@@ -7,8 +7,6 @@ import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.relational.core.mapping.Table;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,7 +18,7 @@ import java.util.List;
  */
 
 @Data
-Document
+@Document
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionID = 1L;
