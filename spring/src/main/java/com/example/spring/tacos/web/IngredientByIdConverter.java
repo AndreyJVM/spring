@@ -1,6 +1,6 @@
 package com.example.spring.tacos.web;
 
-import com.example.spring.data.IIngredientRepository;
+import com.example.spring.data.IngredientRepository;
 import com.example.spring.tacos.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
-    private IIngredientRepository ingredientRepository;
+    private IngredientRepository ingredientRepository;
 
     @Autowired
-    public IngredientByIdConverter(IIngredientRepository ingredientRepository) {
+    public IngredientByIdConverter(IngredientRepository ingredientRepository) {
         this.ingredientRepository = ingredientRepository;
     }
     @Override

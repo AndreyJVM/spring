@@ -1,6 +1,6 @@
 package com.example.spring.tacos.web;
 
-import com.example.spring.data.IOrderRepository;
+import com.example.spring.data.OrderRepository;
 import com.example.spring.tacos.TacoOrder;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -21,9 +21,9 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
-    private IOrderRepository orderRepo;
+    private OrderRepository orderRepo;
 
-    public OrderController(IOrderRepository orderRepo) {
+    public OrderController(OrderRepository orderRepo) {
         this.orderRepo = orderRepo;
     }
 
