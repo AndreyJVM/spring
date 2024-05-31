@@ -138,7 +138,7 @@ public class MainTestAddDIConstructorArg {
 }
 ```
 Вывод от проделанных действий не меняется
-![](/src/main/resources/photo/screenshot/SKR4.png)
+![](/photo/screenshot/SKR4.png)
 
 Рассмотрим способ внедрения зависимостей с помощью сеттеров. Создадим несколько полей для нашего `Person`: `name` типа _String_ и `age` типа _byte_. Плюс геттеры и сеттеры.
 
@@ -165,16 +165,16 @@ public class MainTestAddDIConstructorArg {
 System.out.println("Name - "+person.getName());
 System.out.println("Age - "+person.getAge());
 ```
-![](/src/main/resources/photo/screenshot/SKR5.png)
+![](/photo/screenshot/SKR5.png)
 
 Понемногу начнём знакомиться с жизненным циклом bean (**bean scope**). В официальной документации есть 6 вариантов.
 
-![](/src/main/resources/photo/screenshot/SKR6.png)
+![](/photo/screenshot/SKR6.png)
 
 На данном этапе нас интересуют только _singleton_ и _prototype_. Также на официальном сайте есть отличные картинки иллюстрирующие работу.
 
-![](/src/main/resources/photo/screenshot/SKR7.png)
-![](/src/main/resources/photo/screenshot/SKR8.png)
+![](/photo/screenshot/SKR7.png)
+![](/photo/screenshot/SKR8.png)
 
 Вот такой не замысловатый способ, но Вам скорее всего покажется, что мы в разы усложнили процесс создания объекта.
 Но это на первый взгляд, на самом деле при увеличении количества объектов и зависимостей между ними, Spring позволит нам 
